@@ -11,7 +11,7 @@ const parseDataMap: {
 };
 
 export const isNumeric = (data: any) => {
-	return !isNaN(parseFloat(data)) && isFinite(data);
+	return !isNaN(parseFloat(data)) && isFinite(data) && parseFloat(data) == data;
 }
 
 export const parseData = (data: Dict<any>) => {
@@ -23,10 +23,8 @@ export const parseData = (data: Dict<any>) => {
 			data[key] = parsedValue;
 		} else if (value.constructor === Object) {
 			parseData(data[key]);
-		} else if (['imei', 'iccid', 'imsi'].includes(key)) {
 		} else if (isNumeric(value)) {
-			const parsedFloat = parseFloat(value);
-			if (parsedFloat.toString() === value) data[key] = parsedFloat;
+			data[key] = parseFloat(value);
 		}
 	}
 }
