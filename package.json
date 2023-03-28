@@ -1,5 +1,5 @@
 {
-  "name": "modem-manager",
+  "name": "kikiutils-modem-manager",
   "version": "1.0.0",
   "description": "Modem manager utils.",
   "main": "lib/index.js",
