@@ -1,4 +1,4 @@
-import { NullableString } from '@/typing';
+import { NullableString } from '../../typing';
 
 export interface SimInfo {
 	dbusPath: string;

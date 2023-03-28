@@ -1,4 +1,4 @@
-import { NullableNumber, NullableString } from '@/typing';
+import { NullableNumber, NullableString } from '../../typing';
 
 export interface BearerInfo {
 	dbusPath: string;

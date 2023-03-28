@@ -1,6 +1,6 @@
 import camelcaseKeys from '@cjs-exporter/camelcase-keys';
 
-import { Dict } from '@/typing';
+import { Dict } from '../typing';
 
 const parseDataMap: {
 	[key: string]: boolean | null | undefined;

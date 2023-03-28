@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/kiki-kanri/node-modem-manager#readme",
   "devDependencies": {
+    "@types/node": "^18.15.10",
     "typescript": "^5.0.2"
   },
   "dependencies": {
