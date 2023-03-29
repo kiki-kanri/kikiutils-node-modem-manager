@@ -40,11 +40,11 @@ export default class Modem extends Exec {
 		return this.enabled = result === 'successfully enabled the modem';
 	}
 
-	async getOrCreateBearer(): Promise<Bearer | null> {
+	async getOrCreateBearer(apn: string = 'internet', ipType: 'ipv4' | 'ipv6' | 'ipv4v6' = 'ipv4'): Promise<Bearer | null> {
 		if (this.bearer) return this.bearer;
 		const { generic: { bearers } } = await this.info();
 		if (bearers.length) return this.bearer = new Bearer(this, bearers[0]);
-		const result = await this.simpleConnect();
+		const result = await this.simpleConnect(apn, ipType);
 		if (result) return await this.getOrCreateBearer();
 		return null;
 	}
@@ -76,8 +76,8 @@ export default class Modem extends Exec {
 		await this.mmcli(`--set-current-bands="${bands.join('|')}"`, false);
 	}
 
-	async simpleConnect() {
-		const result = await this.mmcli('--simple-connect="apn=internet,ip-type=ipv4v6"', false) as string;
+	async simpleConnect(apn: string = 'internet', ipType: 'ipv4' | 'ipv6' | 'ipv4v6' = 'ipv4') {
+		const result = await this.mmcli(`--simple-connect="apn=${apn},ip-type=${ipType}"`, false) as string;
 		return result === 'successfully connected the modem';
 	}
 }
