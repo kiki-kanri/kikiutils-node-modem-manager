@@ -7,7 +7,7 @@ import {
 	SimCard,
 	Simple
 } from '..';
-import { ModemInfo } from './typing';
+import { Band, ModemInfo } from './typing';
 
 export default class Modem extends Exec {
 	bearer: Bearer | null = null;
@@ -65,12 +65,19 @@ export default class Modem extends Exec {
 		return await super.mmcli(`-m ${this.number} ${command}`, parse);
 	}
 
-	async setAllowModes() {
-		await this.mmcli('--set-allowed-modes="3G|4G" --set-preferred-mode=4G', false);
+	async set4GMode() {
+		await this.mmcli('--set-allowed-modes=4G', false);
+	}
+
+	/**
+	 * Default bands is eutran-1, eutran-3 and eutran-7.
+	 */
+	async setCurrentBands(bands: Band[] = ['eutran-1', 'eutran-3', 'eutran-7']) {
+		await this.mmcli(`--set-current-bands="${bands.join('|')}"`, false);
 	}
 
 	async simpleConnect() {
-		const result: string = await this.mmcli('--simple-connect="apn=internet,ip-type=ipv4"', false);
+		const result = await this.mmcli('--simple-connect="apn=internet,ip-type=ipv4v6"', false) as string;
 		return result === 'successfully connected the modem';
 	}
 }
