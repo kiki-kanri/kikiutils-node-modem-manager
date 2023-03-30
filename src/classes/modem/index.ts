@@ -30,6 +30,19 @@ export default class Modem extends Exec {
 	}
 
 	/**
+	 * Delete all bearers.
+	 */
+	async deleteAllBearers() {
+		this.bearer = null;
+		const { generic: { bearers } } = await this.info();
+		bearers.forEach(async (bearerPath) => {
+			try {
+				await this.mmcli(`--delete-bearer=${bearerPath}`, false);
+			} catch (error) {}
+		});
+	}
+
+	/**
 	 * Disable modem.
 	 *
 	 * This disconnects the existing connection(s) for the modem and puts it into a low power mode.
@@ -104,5 +117,13 @@ export default class Modem extends Exec {
 	async simpleConnect(apn: string = 'internet', ipType: 'ipv4' | 'ipv6' | 'ipv4v6' = 'ipv4') {
 		const result = await this.mmcli(`--simple-connect="apn=${apn},ip-type=${ipType}"`, false) as string;
 		return result === 'successfully connected the modem';
+	}
+
+	/**
+	 * Disconnect ALL connected bearers.
+	 */
+	async simpleDisconnect() {
+		const result = await this.mmcli('--simple-disconnect', false);
+		return result === 'successfully disconnected all bearers in the modem';
 	}
 }
