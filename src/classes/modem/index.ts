@@ -29,26 +29,45 @@ export default class Modem extends Exec {
 		this.simple = new Simple(this);
 	}
 
+	/**
+	 * Disable modem.
+	 *
+	 * This disconnects the existing connection(s) for the modem and puts it into a low power mode.
+	 *
+	 * If an error occurs, return false.
+	 */
 	async disable() {
-		const result = await this.mmcli('-d', false);
-		if (result === 'successfully disabled the modem') this.enabled = false;
-		return this.enabled === false;
+		try {
+			const result = await this.mmcli('-d', false);
+			if (result === 'successfully disabled the modem') this.enabled = false;
+			return this.enabled === false;
+		} catch (error) { }
+		return false;
 	}
 
+	/**
+	 * Enable a given modem.
+	 *
+	 * This powers the antenna, starts the automatic registration process and in general prepares the modem to be connected.
+	 */
 	async enable() {
 		const result = await this.mmcli('-e', false);
 		return this.enabled = result === 'successfully enabled the modem';
 	}
 
-	async getOrCreateBearer(apn: string = 'internet', ipType: 'ipv4' | 'ipv6' | 'ipv4v6' = 'ipv4'): Promise<Bearer | null> {
+	/**
+	 * Get first bearer.
+	 */
+	async getBearer() {
 		if (this.bearer) return this.bearer;
 		const { generic: { bearers } } = await this.info();
 		if (bearers.length) return this.bearer = new Bearer(this, bearers[0]);
-		const result = await this.simpleConnect(apn, ipType);
-		if (result) return await this.getOrCreateBearer();
 		return null;
 	}
 
+	/**
+	 * Get first sim card.
+	 */
 	async getSimCard() {
 		if (this.simCard) return this.simCard;
 		const info = await this.info();
@@ -56,6 +75,9 @@ export default class Modem extends Exec {
 		return this.simCard;
 	}
 
+	/**
+	 * Get base info.
+	 */
 	async info() {
 		const { modem: data } = await this.mmcli();
 		return parseResultData(data) as ModemInfo;
@@ -65,6 +87,9 @@ export default class Modem extends Exec {
 		return await super.mmcli(`-m ${this.number} ${command}`, parse);
 	}
 
+	/**
+	 * Set allow modes only 4G.
+	 */
 	async set4GMode() {
 		await this.mmcli('--set-allowed-modes=4G', false);
 	}
