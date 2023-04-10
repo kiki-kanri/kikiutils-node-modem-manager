@@ -15,7 +15,7 @@ export default class Sms {
 
 	async data() {
 		const { sms: data } = await this.modem.mmcli(`-s ${this.number}`);
-		return parseResultData(data, ['number']) as SmsData;
+		return parseResultData(data, ['number', 'smsc']) as SmsData;
 	}
 
 	async delete() {

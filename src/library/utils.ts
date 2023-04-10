@@ -22,7 +22,7 @@ export const parseData = (data: Dict<any>, noParseKeys: string[] = []) => {
 		if (parsedValue !== undefined) {
 			data[key] = parsedValue;
 		} else if (value.constructor === Object) {
-			parseData(data[key]);
+			parseData(data[key], noParseKeys);
 		} else if (key.match(/iccid|imei|imsi/gi) === null && !noParseKeys.includes(key) && isNumeric(value)) {
 			data[key] = parseFloat(value);
 		}
