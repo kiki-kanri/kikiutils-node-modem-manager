@@ -3,6 +3,7 @@ import {
 	Bearer,
 	Exec,
 	Gpp,
+	Messaging,
 	Signal,
 	SimCard,
 	Simple
@@ -13,6 +14,7 @@ export default class Modem extends Exec {
 	bearer: Bearer | null = null;
 	enabled: boolean = false;
 	gpp: Gpp;
+	messaging: Messaging;
 	number: number;
 	path: string;
 	signal: Signal;
@@ -25,6 +27,7 @@ export default class Modem extends Exec {
 		this.path = modemPath;
 
 		this.gpp = new Gpp(this);
+		this.messaging = new Messaging(this);
 		this.signal = new Signal(this);
 		this.simple = new Simple(this);
 	}
@@ -38,7 +41,7 @@ export default class Modem extends Exec {
 		bearers.forEach(async (bearerPath) => {
 			try {
 				await this.mmcli(`--delete-bearer=${bearerPath}`, false);
-			} catch (error) {}
+			} catch (error) { }
 		});
 	}
 

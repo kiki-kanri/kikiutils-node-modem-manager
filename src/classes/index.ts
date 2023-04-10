@@ -2,6 +2,8 @@ export { default as Bearer } from './bearer';
 export { default as Exec } from './exec';
 export { default as Gpp } from './gpp';
 export { default as Manager } from './manager';
+export { default as Messaging } from './messaging';
+export { default as Sms } from './messaging/sms';
 export { default as Modem } from './modem';
 export { default as Signal } from './signal';
 export { default as SimCard } from './simcard';

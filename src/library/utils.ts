@@ -14,7 +14,7 @@ export const isNumeric = (data: any) => {
 	return !isNaN(parseFloat(data)) && isFinite(data) && parseFloat(data) == data;
 }
 
-export const parseData = (data: Dict<any>) => {
+export const parseData = (data: Dict<any>, noParseKeys: string[] = []) => {
 	for (const key in data) {
 		const value = data[key];
 		const parsedValue = parseDataMap[value];
@@ -23,15 +23,15 @@ export const parseData = (data: Dict<any>) => {
 			data[key] = parsedValue;
 		} else if (value.constructor === Object) {
 			parseData(data[key]);
-		} else if (key.match(/iccid|imei|imsi/gi) === null && isNumeric(value)) {
+		} else if (key.match(/iccid|imei|imsi/gi) === null && !noParseKeys.includes(key) && isNumeric(value)) {
 			data[key] = parseFloat(value);
 		}
 	}
 }
 
-export const parseResultData = (data: Dict<any>) => {
+export const parseResultData = (data: Dict<any>, noParseKeys: string[] = []) => {
 	const convertedData = camelcaseKeys(data, { deep: true });
-	parseData(convertedData);
+	parseData(convertedData, noParseKeys);
 	return sortDictKey(convertedData);
 }
 
