@@ -9,9 +9,9 @@ export interface MessagingStatus {
 
 export interface SmsData {
 	content: {
-		data: any;
+		data: NullableString;
 		number: string;
-		text: string;
+		text: NullableString;
 	}
 
 	dbusPath: string;
@@ -23,7 +23,7 @@ export interface SmsData {
 		messageReference: any;
 		pduType: string,
 		serviceCategory: NullableString;
-		smsc: string;
+		smsc: NullableString;
 		state: string;
 		storage: string;
 		teleserviceId: NullableNumber;

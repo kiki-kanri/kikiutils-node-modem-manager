@@ -23,8 +23,8 @@ export interface ModemInfo {
 		}
 
 		imei: string;
-		operatorCode: number;
-		operatorName: string;
+		operatorCode: NullableNumber;
+		operatorName: NullableString;
 		packetServiceState: 'attached' | 'detached';
 		pco: NullableNumber;
 		registrationState: 'home'
