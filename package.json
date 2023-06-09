@@ -1,6 +1,6 @@
 {
   "name": "kikiutils-modem-manager",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Modem manager utils.",
   "main": "lib/index.js",
   "type": "commonjs",
@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/kiki-kanri/node-modem-manager#readme",
   "devDependencies": {
-    "@types/node": "^18.15.10",
-    "typescript": "^5.0.2"
+    "@types/node": "^20.2.5",
+    "typescript": "^5.1.3"
   },
   "dependencies": {
     "@cjs-exporter/camelcase-keys": "^8.0.2",
