@@ -8,7 +8,7 @@ import {
 	SimCard,
 	Simple
 } from '..';
-import { Band, ModemInfo } from './typing';
+import { Band, ModemInfo } from './types';
 
 export default class Modem extends Exec {
 	bearer: Bearer | null = null;

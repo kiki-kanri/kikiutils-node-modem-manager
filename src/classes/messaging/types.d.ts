@@ -1,4 +1,4 @@
-import { NullableNumber, NullableString } from '../../typing';
+import { NullableNumber, NullableString } from '../../types';
 
 export interface MessagingStatus {
 	messaging: {

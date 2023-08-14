@@ -1,5 +1,5 @@
 import { parseResultData } from '../library/utils';
-import { NullableNumber } from '../typing';
+import { NullableNumber } from '../types';
 import Modem from './modem';
 
 interface SignalData {

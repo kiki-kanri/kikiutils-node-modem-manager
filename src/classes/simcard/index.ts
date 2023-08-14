@@ -1,6 +1,6 @@
 import { parseResultData } from '../../library/utils';
 import Modem from '../modem';
-import { SimInfo } from './typing';
+import { SimInfo } from './types';
 
 export default class SimCard {
 	modem: Modem;

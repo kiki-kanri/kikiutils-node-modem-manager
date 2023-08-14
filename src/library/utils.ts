@@ -1,6 +1,6 @@
 import camelcaseKeys from '@cjs-exporter/camelcase-keys';
 
-import { Dict } from '../typing';
+import { Dict } from '../types';
 
 const parseDataMap: Dict<boolean | null | undefined> = {
 	'--': null,
@@ -16,7 +16,6 @@ export const parseData = (data: Dict<any>, noParseKeys: string[] = []) => {
 	for (const key in data) {
 		const value = data[key];
 		const parsedValue = parseDataMap[value];
-
 		if (parsedValue !== undefined) {
 			data[key] = parsedValue;
 		} else if (value.constructor === Object) {

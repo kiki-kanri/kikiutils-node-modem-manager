@@ -1,6 +1,6 @@
 import { parseResultData } from '../../library/utils';
 import Modem from '../modem';
-import { SmsData } from './typing';
+import { SmsData } from './types';
 
 export default class Sms {
 	modem: Modem;
