@@ -1,34 +1,34 @@
 {
   "name": "kikiutils-modem-manager",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Modem manager utils.",
-  "main": "lib/index.js",
-  "type": "commonjs",
-  "files": [
-    "lib/**/*"
-  ],
-  "scripts": {
-    "build": "tsc"
-  },
+  "license": "MIT",
+  "author": "kiki-kanri",
+  "homepage": "https://github.com/kiki-kanri/node-modem-manager#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kiki-kanri/node-modem-manager.git"
   },
-  "keywords": [
-    "modem-manager"
-  ],
-  "author": "kiki-kanri",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kiki-kanri/node-modem-manager/issues"
   },
-  "homepage": "https://github.com/kiki-kanri/node-modem-manager#readme",
-  "devDependencies": {
-    "@types/node": "^20.2.5",
-    "typescript": "^5.1.3"
+  "type": "commonjs",
+  "main": "./lib/index.js",
+  "files": [
+    "./lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc"
   },
   "dependencies": {
     "@cjs-exporter/camelcase-keys": "^8.0.2",
-    "@esm2cjs/execa": "^6.1.1-cjs.1"
-  }
+    "@esm2cjs/execa": "6.1.1-cjs.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "typescript": "^5.1.6"
+  },
+  "keywords": [
+    "modem-manager"
+  ]
 }
