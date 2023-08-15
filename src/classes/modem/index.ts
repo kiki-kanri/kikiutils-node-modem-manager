@@ -1,4 +1,5 @@
 import { parseResultData } from '../../library/utils';
+import { Nullable } from '../../types';
 import {
 	Bearer,
 	Exec,
@@ -11,14 +12,14 @@ import {
 import { Band, ModemInfo } from './types';
 
 export default class Modem extends Exec {
-	bearer: Bearer | null = null;
+	bearer: Nullable<Bearer> = null;
 	enabled: boolean = false;
 	gpp: Gpp;
 	messaging: Messaging;
 	number: number;
 	path: string;
 	signal: Signal;
-	simCard: null | SimCard = null;
+	simCard: Nullable<SimCard> = null;
 	simple: Simple;
 
 	constructor(modemPath: string) {
