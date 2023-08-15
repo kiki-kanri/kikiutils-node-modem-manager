@@ -1,5 +1,5 @@
 #!/bin/sh
 
-rm -rf ./lib
-npm run build
-npm publish
+rm -rf ./lib &&
+	npm run build &&
+	npm publish
