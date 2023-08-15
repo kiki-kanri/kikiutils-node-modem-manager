@@ -1,4 +1,4 @@
-import { parseResultData } from '../../library/utils';
+import { parseResultData } from '@/library/utils';
 import Modem from '../modem';
 import Sms from './sms';
 import { MessagingStatus } from './types';

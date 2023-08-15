@@ -1,6 +1,6 @@
 import camelcaseKeys from '@cjs-exporter/camelcase-keys';
 
-import { Dict, Nullable } from '../types';
+import { Dict, Nullable } from '@/types';
 
 const parseDataMap: Dict<Nullable<boolean | undefined>> = {
 	'--': null,

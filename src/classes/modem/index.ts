@@ -1,5 +1,5 @@
-import { parseResultData } from '../../library/utils';
-import { Nullable } from '../../types';
+import { parseResultData } from '@/library/utils';
+import { Nullable } from '@/types';
 import {
 	Bearer,
 	Exec,

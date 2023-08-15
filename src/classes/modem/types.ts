@@ -1,4 +1,4 @@
-import { NullableNumber, NullableString } from '../../types';
+import { NullableNumber, NullableString } from '@/types';
 
 export type Band = 'egsm' | 'dcs' | 'utran-1' | 'utran-5' | 'utran-8' | 'eutran-1' | 'eutran-3' | 'eutran-5' | 'eutran-7' | 'eutran-8' | 'eutran-20' | 'eutran-38' | 'eutran-40' | 'eutran-41';
 export type Driver = 'option' | 'qmi_wwan';
