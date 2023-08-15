@@ -99,7 +99,7 @@ export default class Modem extends Exec {
 		return parseResultData(data) as ModemInfo;
 	}
 
-	async mmcli(command: string = '', parse = true) {
+	override async mmcli(command: string = '', parse = true) {
 		return await super.mmcli(`-m ${this.number} ${command}`, parse);
 	}
 
