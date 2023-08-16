@@ -3,7 +3,9 @@
   "version": "1.1.5",
   "description": "Modem manager utils.",
   "license": "MIT",
-  "author": "kiki-kanri",
+  "author": {
+    "name": "kiki-kanri"
+  },
   "homepage": "https://github.com/kiki-kanri/node-modem-manager#readme",
   "repository": {
     "type": "git",
@@ -18,7 +20,7 @@
     "./lib/**/*"
   ],
   "scripts": {
-    "build": "tsc && tsc-alias"
+    "build": "rm -rf ./lib && tsc"
   },
   "dependencies": {
     "@cjs-exporter/camelcase-keys": "^8.0.2",

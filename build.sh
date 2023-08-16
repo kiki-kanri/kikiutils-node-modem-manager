@@ -1,5 +1,4 @@
 #!/bin/bash
 
-rm -rf ./lib &&
-	npm run build &&
+npm run build &&
 	npm publish
