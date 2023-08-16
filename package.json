@@ -1,6 +1,6 @@
 {
-  "name": "kikiutils-modem-manager",
-  "version": "1.1.7",
+  "name": "@kikiutils/modem-manager",
+  "version": "1.0.0",
   "description": "Modem manager utils.",
   "license": "MIT",
   "author": {
@@ -32,6 +32,9 @@
     "typescript": "^5.1.6"
   },
   "keywords": [
-    "modem-manager"
+    "mmcli",
+    "modem",
+    "modem-manager",
+    "qmicli"
   ]
 }
