@@ -1,7 +1,7 @@
 import Exec from './exec';
 import Modem from './modem';
 
-export default new class Manager extends Exec {
+export const Manager = new class Manager extends Exec {
 	/**
 	 * Retrieve the version of the currently running ModemManager daemon.
 	 */
@@ -43,3 +43,5 @@ export default new class Manager extends Exec {
 		return result.toLowerCase() === 'successfully set logging level';
 	}
 }
+
+export default Manager;

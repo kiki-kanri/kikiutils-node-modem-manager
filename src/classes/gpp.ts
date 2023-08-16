@@ -1,6 +1,6 @@
 import Modem from './modem';
 
-export default class Gpp {
+export class Gpp {
 	modem: Modem;
 
 	constructor(modem: Modem) {
@@ -17,3 +17,5 @@ export default class Gpp {
 		return result === 'successfully registered the modem';
 	}
 }
+
+export default Gpp;

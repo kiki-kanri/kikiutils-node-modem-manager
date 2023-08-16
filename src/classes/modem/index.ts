@@ -1,17 +1,15 @@
 import { parseResultData } from '@/library/utils';
 import { Nullable } from '@/types';
-import {
-	Bearer,
-	Exec,
-	Gpp,
-	Messaging,
-	Signal,
-	SimCard,
-	Simple
-} from '..';
+import Bearer from '../bearer';
+import Exec from '../exec';
+import Gpp from '../gpp';
+import Messaging from '../messaging';
+import Signal from '../signal';
+import SimCard from '../simcard';
+import Simple from '../simple';
 import { Band, ModemInfo } from './types';
 
-export default class Modem extends Exec {
+export class Modem extends Exec {
 	bearer: Nullable<Bearer> = null;
 	enabled: boolean = false;
 	gpp: Gpp;
@@ -131,3 +129,5 @@ export default class Modem extends Exec {
 		return result === 'successfully disconnected all bearers in the modem';
 	}
 }
+
+export default Modem;

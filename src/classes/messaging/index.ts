@@ -3,7 +3,7 @@ import Modem from '../modem';
 import Sms from './sms';
 import { MessagingStatus } from './types';
 
-export default class Messaging {
+export class Messaging {
 	modem: Modem;
 
 	constructor(modem: Modem) {
@@ -20,3 +20,5 @@ export default class Messaging {
 		return parseResultData(data) as MessagingStatus;
 	}
 }
+
+export default Messaging;

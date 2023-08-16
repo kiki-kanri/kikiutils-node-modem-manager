@@ -1,6 +1,6 @@
 import { execaCommand } from '@esm2cjs/execa';
 
-export default class Exec {
+export class Exec {
 	async exec(command: string) {
 		return (await execaCommand(command, { shell: true, timeout: 10000 })).stdout.trim();
 	}
@@ -11,3 +11,5 @@ export default class Exec {
 		return result;
 	}
 }
+
+export default Exec;

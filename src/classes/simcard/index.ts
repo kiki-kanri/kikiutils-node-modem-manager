@@ -2,7 +2,7 @@ import { parseResultData } from '@/library/utils';
 import Modem from '../modem';
 import { SimInfo } from './types';
 
-export default class SimCard {
+export class SimCard {
 	modem: Modem;
 	number: number;
 	path: string;
@@ -24,3 +24,5 @@ export default class SimCard {
 		return result;
 	}
 }
+
+export default SimCard;

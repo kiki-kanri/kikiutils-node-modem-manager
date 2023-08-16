@@ -1,6 +1,6 @@
 import Modem from './modem';
 
-export default class Simple {
+export class Simple {
 	connected: boolean = false;
 	modem: Modem;
 
@@ -16,3 +16,5 @@ export default class Simple {
 		return result === 'successfully disconnected all bearers in the modem';
 	}
 }
+
+export default Simple;

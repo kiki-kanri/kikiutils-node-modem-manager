@@ -2,7 +2,7 @@ import { parseResultData } from '@/library/utils';
 import Modem from '../modem';
 import { BearerInfo } from './types';
 
-export default class Bearer {
+export class Bearer {
 	modem: Modem;
 	number: number;
 	path: string;
@@ -43,3 +43,5 @@ export default class Bearer {
 		return result;
 	}
 }
+
+export default Bearer;

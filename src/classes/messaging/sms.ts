@@ -2,7 +2,7 @@ import { parseResultData } from '@/library/utils';
 import Modem from '../modem';
 import { SmsData } from './types';
 
-export default class Sms {
+export class Sms {
 	modem: Modem;
 	number: number;
 	path: string;
@@ -23,3 +23,5 @@ export default class Sms {
 		return result.toLowerCase() === 'successfully deleted sms from modem';
 	}
 }
+
+export default Sms;

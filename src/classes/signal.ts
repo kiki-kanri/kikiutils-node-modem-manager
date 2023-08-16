@@ -51,7 +51,7 @@ interface SignalData {
 	}
 }
 
-export default class Signal {
+export class Signal {
 	modem: Modem;
 
 	constructor(modem: Modem) {
@@ -77,3 +77,5 @@ export default class Signal {
 		return result.toLowerCase() === 'successfully setup signal quality information polling';
 	}
 }
+
+export default Signal;
