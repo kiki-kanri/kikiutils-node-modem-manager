@@ -1,6 +1,6 @@
 {
   "name": "@kikiutils/modem-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Modem manager utils.",
   "license": "MIT",
   "author": {
@@ -27,7 +27,7 @@
     "@esm2cjs/execa": "6.1.1-cjs.1"
   },
   "devDependencies": {
-    "@types/node": "^20.5.0",
+    "@types/node": "^20.5.1",
     "tsc-alias": "^1.8.7",
     "typescript": "^5.1.6"
   },
