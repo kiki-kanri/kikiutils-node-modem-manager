@@ -13,6 +13,7 @@ export default defineConfig({
 	output: {
 		dir: distPath,
 		exports: 'named',
+		externalLiveBindings: false,
 		format: 'cjs',
 		generatedCode: {
 			arrowFunctions: true,
