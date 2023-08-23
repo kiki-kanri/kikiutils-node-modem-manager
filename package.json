@@ -27,7 +27,7 @@
     "@esm2cjs/execa": "6.1.1-cjs.1"
   },
   "devDependencies": {
-    "@types/node": "^20.5.1",
+    "@types/node": "^20.5.3",
     "rollup": "^3.28.1",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-node-externals": "5.1.3",
