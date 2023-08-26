@@ -1,6 +1,6 @@
-# node-modem-manager
+# @kikiutils/modem-manager
 
-Modem manager for nodejs.
+Modem manager (mmcli) for nodejs.
 
 Only supported linux ubuntu 22.04 or later version.
 
