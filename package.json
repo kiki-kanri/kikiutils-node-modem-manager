@@ -20,7 +20,7 @@
     "./dist/**/*"
   ],
   "scripts": {
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "ts-project-builder -c --build-type package"
   },
   "dependencies": {
     "@cjs-exporter/camelcase-keys": "^8.0.2",
@@ -29,10 +29,7 @@
   "devDependencies": {
     "@kikiutils/tsconfigs": "^0.1.1",
     "@types/node": "^20.5.6",
-    "rollup": "^3.28.1",
-    "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-node-externals": "6.1.1",
-    "rollup-plugin-ts": "^3.4.4",
+    "ts-project-builder": "^0.3.1",
     "typescript": "^5.2.2"
   },
   "keywords": [
