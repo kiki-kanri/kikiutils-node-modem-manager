@@ -76,7 +76,7 @@ export class Modem extends Exec {
 	async getBearer() {
 		if (this.bearer) return this.bearer;
 		const { generic: { bearers } } = await this.info();
-		if (bearers.length) return this.bearer = new Bearer(this, bearers[0]);
+		if (bearers[0]) return this.bearer = new Bearer(this, bearers[0]);
 		return null;
 	}
 
