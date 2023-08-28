@@ -20,8 +20,8 @@ devDependencies:
     specifier: ^20.5.7
     version: 20.5.7
   ts-project-builder:
-    specifier: ^0.6.1
-    version: 0.6.1(esbuild@0.19.2)
+    specifier: ^0.7.0
+    version: 0.7.0(esbuild@0.19.2)
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -357,8 +357,8 @@ packages:
     resolution: {integrity: sha512-219LSCO9HPcoXcRTC6DbCs0FRhZgBnEMzf16RRqkT40WbkKx3mOeQuz3e2XqbfhOz/AHfbru0kzB1n1RCAsIIg==}
     dev: true
 
-  /@types/semver@7.5.0:
-    resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
+  /@types/semver@7.5.1:
+    resolution: {integrity: sha512-cJRQXpObxfNKkFAZbJl2yjWtJCqELQIdShsogr1d2MilP8dKD9TE/nEKHkJgUNHdGKCQaf9HbIynuV2csLGVLg==}
     dev: true
 
   /@types/ua-parser-js@0.7.36:
@@ -381,7 +381,7 @@ packages:
     dependencies:
       '@mdn/browser-compat-data': 5.3.13
       '@types/object-path': 0.11.1
-      '@types/semver': 7.5.0
+      '@types/semver': 7.5.1
       '@types/ua-parser-js': 0.7.36
       browserslist: 4.21.10
       caniuse-lite: 1.0.30001524
@@ -397,7 +397,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001524
-      electron-to-chromium: 1.4.503
+      electron-to-chromium: 1.4.504
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.10)
     dev: true
@@ -470,8 +470,8 @@ packages:
       ms: 2.1.2
     dev: true
 
-  /electron-to-chromium@1.4.503:
-    resolution: {integrity: sha512-LF2IQit4B0VrUHFeQkWhZm97KuJSGF2WJqq1InpY+ECpFRkXd8yTIaTtJxsO0OKDmiBYwWqcrNaXOurn2T2wiA==}
+  /electron-to-chromium@1.4.504:
+    resolution: {integrity: sha512-cSMwIAd8yUh54VwitVRVvHK66QqHWE39C3DRj8SWiXitEpVSY3wNPD9y1pxQtLIi4w3UdzF9klLsmuPshz09DQ==}
     dev: true
 
   /es-module-lexer@1.3.0:
@@ -743,8 +743,8 @@ packages:
       typescript: 5.2.2
     dev: true
 
-  /ts-project-builder@0.6.1(esbuild@0.19.2):
-    resolution: {integrity: sha512-HnVG2mLFpTA4BqTEkdq6yTqwTdBRSz2YF9OcTIs8kGMBiJI3tOLk8qqVYLSgm/wQklZ0l8QpZAxEwkNfa7SB0Q==}
+  /ts-project-builder@0.7.0(esbuild@0.19.2):
+    resolution: {integrity: sha512-KcSaj38DTlqgQL2eRN77fTsGnjjSudpGLXgBxR8jRTqoc+neesO6TpHlVDN1/1qWVyj0rtB/AZhBAVjZ9xJhig==}
     hasBin: true
     dependencies:
       '@rollup/plugin-json': 6.0.0(rollup@3.28.1)
