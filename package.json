@@ -20,7 +20,7 @@
     "./dist/**/*"
   ],
   "scripts": {
-    "build": "ts-project-builder -c --build-type package"
+    "build": "ts-project-builder -c --type package"
   },
   "dependencies": {
     "@cjs-exporter/camelcase-keys": "^8.0.2",
@@ -28,8 +28,8 @@
   },
   "devDependencies": {
     "@kikiutils/tsconfigs": "^0.2.1",
-    "@types/node": "^20.5.7",
-    "ts-project-builder": "^0.7.0",
+    "@types/node": "^20.8.0",
+    "ts-project-builder": "^1.0.2",
     "typescript": "^5.2.2"
   },
   "keywords": [
