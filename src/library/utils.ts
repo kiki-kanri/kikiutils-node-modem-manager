@@ -4,13 +4,13 @@ import { Dict, Nullable } from '@/types';
 
 const parseDataMap: Dict<Nullable<boolean | undefined>> = {
 	'--': null,
-	'no': false,
-	'yes': true
+	no: false,
+	yes: true
 };
 
 export const isNumeric = (data: any) => {
 	return !isNaN(parseFloat(data)) && isFinite(data) && parseFloat(data) == data;
-}
+};
 
 export const parseData = (data: Dict<any>, noParseKeys: string[] = []) => {
 	for (const key in data) {
@@ -24,13 +24,13 @@ export const parseData = (data: Dict<any>, noParseKeys: string[] = []) => {
 			data[key] = parseFloat(value);
 		}
 	}
-}
+};
 
 export const parseResultData = (data: Dict<any>, noParseKeys: string[] = []) => {
 	const convertedData = camelcaseKeys(data, { deep: true });
 	parseData(convertedData, noParseKeys);
 	return sortDictKey(convertedData);
-}
+};
 
 export const sortDictKey = (data: Dict<any>): Dict<any> => {
 	const sorted = [];
@@ -40,4 +40,4 @@ export const sortDictKey = (data: Dict<any>): Dict<any> => {
 	for (const key of sorted) tmpDict[key] = data[key];
 	for (const key in tmpDict) if (tmpDict[key] && tmpDict[key].constructor === Object) tmpDict[key] = sortDictKey(tmpDict[key]);
 	return tmpDict;
-}
+};

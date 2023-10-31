@@ -9,7 +9,7 @@ export interface BearerInfo {
 		method: NullableString;
 		mtu: NullableString;
 		prefix: NullableString;
-	}
+	};
 
 	ipv6Config: {
 		address: NullableString;
@@ -18,11 +18,11 @@ export interface BearerInfo {
 		method: NullableString;
 		mtu: NullableString;
 		prefix: NullableString;
-	}
+	};
 
 	properties: {
 		accessTypePreference: NullableString;
-		allowedAuth: string[],
+		allowedAuth: string[];
 		apn: string;
 		apnType: NullableString;
 		ipType: 'ipv4' | 'ipv6';
@@ -32,7 +32,7 @@ export interface BearerInfo {
 		roaming: 'allowed' | 'denied';
 		roamingAllowance: NullableString;
 		user: NullableString;
-	}
+	};
 
 	stats: {
 		attempts: number;
@@ -46,21 +46,21 @@ export interface BearerInfo {
 		totalBytesTx: NullableNumber;
 		totalDuration: number;
 		uplinkSpeed: NullableNumber;
-	}
+	};
 
 	status: {
 		connected: boolean;
 		connectionError: {
 			message: NullableString;
 			name: NullableString;
-		}
+		};
 
 		interface: string;
 		ipTimeout: number;
 		multiplexed: boolean;
 		profileId: NullableString;
 		suspended: boolean;
-	}
+	};
 
 	type: string;
 }

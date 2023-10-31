@@ -36,11 +36,13 @@ export class Modem extends Exec {
 	 */
 	async deleteAllBearers() {
 		this.bearer = null;
-		const { generic: { bearers } } = await this.info();
+		const {
+			generic: { bearers }
+		} = await this.info();
 		bearers.forEach(async (bearerPath) => {
 			try {
 				await this.mmcli(`--delete-bearer=${bearerPath}`, false);
-			} catch (error) { }
+			} catch (error) {}
 		});
 	}
 
@@ -56,7 +58,7 @@ export class Modem extends Exec {
 			const result = await this.mmcli('-d', false);
 			if (result === 'successfully disabled the modem') this.enabled = false;
 			return this.enabled === false;
-		} catch (error) { }
+		} catch (error) {}
 		return false;
 	}
 
@@ -67,7 +69,7 @@ export class Modem extends Exec {
 	 */
 	async enable() {
 		const result = await this.mmcli('-e', false);
-		return this.enabled = result === 'successfully enabled the modem';
+		return (this.enabled = result === 'successfully enabled the modem');
 	}
 
 	/**
@@ -75,8 +77,10 @@ export class Modem extends Exec {
 	 */
 	async getBearer() {
 		if (this.bearer) return this.bearer;
-		const { generic: { bearers } } = await this.info();
-		if (bearers[0]) return this.bearer = new Bearer(this, bearers[0]);
+		const {
+			generic: { bearers }
+		} = await this.info();
+		if (bearers[0]) return (this.bearer = new Bearer(this, bearers[0]));
 		return null;
 	}
 
@@ -117,7 +121,7 @@ export class Modem extends Exec {
 	}
 
 	async simpleConnect(apn: string = 'internet', ipType: 'ipv4' | 'ipv6' | 'ipv4v6' = 'ipv4') {
-		const result = await this.mmcli(`--simple-connect="apn=${apn},ip-type=${ipType}"`, false) as string;
+		const result = (await this.mmcli(`--simple-connect="apn=${apn},ip-type=${ipType}"`, false)) as string;
 		return result === 'successfully connected the modem';
 	}
 

@@ -16,5 +16,5 @@ export interface SimInfo {
 		preferredNetworks: string[];
 		removability: NullableString;
 		simType: NullableString;
-	}
+	};
 }

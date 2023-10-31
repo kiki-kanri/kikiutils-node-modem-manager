@@ -1,7 +1,7 @@
 import Exec from './exec';
 import Modem from './modem';
 
-export const Manager = new class Manager extends Exec {
+export const Manager = new (class Manager extends Exec {
 	/**
 	 * Retrieve the version of the currently running ModemManager daemon.
 	 */
@@ -42,6 +42,6 @@ export const Manager = new class Manager extends Exec {
 		const result = await this.mmcli(`-G ${level}`, false);
 		return result.toLowerCase() === 'successfully set logging level';
 	}
-}
+})();
 
 export default Manager;

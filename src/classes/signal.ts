@@ -8,13 +8,13 @@ interface SignalData {
 		rsrp: NullableNumber;
 		rsrq: NullableNumber;
 		snr: NullableNumber;
-	}
+	};
 
 	cdma1X: {
 		ecio: NullableNumber;
 		errorRate: boolean;
 		rssi: NullableNumber;
-	}
+	};
 
 	evdo: {
 		ecio: NullableNumber;
@@ -22,12 +22,12 @@ interface SignalData {
 		io: NullableNumber;
 		rssi: NullableNumber;
 		sinr: NullableNumber;
-	}
+	};
 
 	gsm: {
 		errorRate: boolean;
 		rssi: NullableNumber;
-	}
+	};
 
 	lte: {
 		errorRate: boolean;
@@ -35,20 +35,20 @@ interface SignalData {
 		rsrq: NullableNumber;
 		rssi: NullableNumber;
 		snr: NullableNumber;
-	}
+	};
 
 	refresh: { rate: number };
 	threshold: {
 		errorRate: boolean;
 		rssi: number;
-	}
+	};
 
 	umts: {
 		ecio: NullableNumber;
 		errorRate: boolean;
 		rscp: NullableNumber;
 		rssi: NullableNumber;
-	}
+	};
 }
 
 export class Signal {
@@ -62,7 +62,9 @@ export class Signal {
 	 * Retrieve the last extended signal quality information loaded.
 	 */
 	async get() {
-		const { modem: { signal: data } } = await this.modem.mmcli('--signal-get');
+		const {
+			modem: { signal: data }
+		} = await this.modem.mmcli('--signal-get');
 		return parseResultData(data) as SignalData;
 	}
 
@@ -73,7 +75,7 @@ export class Signal {
 	 */
 	async setup(seconds: number = 0) {
 		if (!this.modem.enabled) await this.modem.enable();
-		const result = await this.modem.mmcli(`--signal-setup=${seconds}`, false) as string;
+		const result = (await this.modem.mmcli(`--signal-setup=${seconds}`, false)) as string;
 		return result.toLowerCase() === 'successfully setup signal quality information polling';
 	}
 }

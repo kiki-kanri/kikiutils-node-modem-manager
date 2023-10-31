@@ -4,7 +4,7 @@ export interface MessagingStatus {
 	messaging: {
 		defaultStorages: string;
 		supportedStorages: string;
-	}
+	};
 }
 
 export interface SmsData {
@@ -12,7 +12,7 @@ export interface SmsData {
 		data: NullableString;
 		number: string;
 		text: NullableString;
-	}
+	};
 
 	dbusPath: string;
 	properties: {
@@ -21,7 +21,7 @@ export interface SmsData {
 		deliveryState: any;
 		dischargeTimestamp: NullableString;
 		messageReference: any;
-		pduType: string,
+		pduType: string;
 		serviceCategory: NullableString;
 		smsc: NullableString;
 		state: string;
@@ -29,5 +29,5 @@ export interface SmsData {
 		teleserviceId: NullableNumber;
 		timestamp: string;
 		validity: any;
-	}
+	};
 }

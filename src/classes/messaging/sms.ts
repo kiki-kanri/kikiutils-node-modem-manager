@@ -19,7 +19,7 @@ export class Sms {
 	}
 
 	async delete() {
-		const result = await this.modem.mmcli(`--messaging-delete-sms=${this.number}`, false) as string;
+		const result = (await this.modem.mmcli(`--messaging-delete-sms=${this.number}`, false)) as string;
 		return result.toLowerCase() === 'successfully deleted sms from modem';
 	}
 }
