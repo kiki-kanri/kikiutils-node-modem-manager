@@ -27,9 +27,9 @@
     "@esm2cjs/execa": "6.1.1-cjs.1"
   },
   "devDependencies": {
-    "@kikiutils/tsconfigs": "^0.2.1",
-    "@types/node": "^20.8.0",
-    "ts-project-builder": "^1.0.2",
+    "@kikiutils/tsconfigs": "^1.0.0",
+    "@types/node": "^20.8.10",
+    "ts-project-builder": "^2.0.1",
     "typescript": "^5.2.2"
   },
   "keywords": [
